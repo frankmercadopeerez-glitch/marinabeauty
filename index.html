@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marina Beauty | Belleza Premium</title>
+    <link rel="icon" href="images/logomarina.jpeg" type="image/jpeg" />
+
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuentes de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              marina: {
+                teal: "#1f8f9f" /* Color principal del texto Marina */,
+                dark: "#0e6574" /* Color secundario */,
+                pink: "#f79fb0" /* Rosa suave de la estrella de mar */,
+                light: "#e0f6f9" /* Fondo celeste agua */,
+                sand: "#fdfbf7" /* Color perla/arena claro */,
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              script: ["Parisienne", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fdfbf7;
+      }
+      .logo-text {
+        font-family: "Parisienne", cursive;
+      }
+
+      /* Ocultar scrollbar en el carrito para que se vea más limpio */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(rgba(31, 143, 159, 0.85), rgba(31, 143, 159, 0.85)),
+          url("images/logomarina.jpeg") center/cover;
+      }
+
+      .price-badge {
+        background: linear-gradient(135deg, #f79fb0 0%, #e06080 100%);
+      }
+
+      .producto-sin-precio {
+        background: linear-gradient(135deg, #d4af37 0%, #f9d76f 100%);
+      }
+    </style>
+  </head>
+  <body
+    class="text-gray-800 antialiased flex flex-col min-h-screen relative"
+    id="page-body"
+  >
+    <!-- Banner de Promoción -->
+    <div
+      class="bg-gradient-to-r from-marina-pink to-marina-teal text-white py-2 text-center text-xs sm:text-sm font-semibold"
+    >
+      <i class="fa-solid fa-gift"></i> 🎉 ¡30% de descuento en la segunda unidad
+      en referencias seleccionadas! 🎉 <i class="fa-solid fa-gift"></i>
+    </div>
+
+    <!-- Navegación -->
+    <nav
+      class="bg-white shadow-sm sticky top-0 z-40 bg-opacity-95 backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+            <img
+              src="images/logomarina.jpeg"
+              alt="Marina Beauty"
+              class="h-12 w-12 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <span
+                class="logo-text text-2xl sm:text-3xl text-marina-teal leading-none"
+                >Marina</span
+              >
+              <span
+                class="text-[8px] sm:text-[10px] tracking-[0.2em] text-marina-dark font-bold uppercase"
+                >Beauty</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-2 sm:gap-6">
+            <a
+              href="#catalogo"
+              class="text-marina-teal hover:text-marina-pink transition-colors font-medium text-xs sm:text-sm"
+              >Catálogo</a
+            >
+            <a
+              href="#politica"
+              class="text-marina-teal hover:text-marina-pink transition-colors font-medium text-xs sm:text-sm"
+              >Garantía</a
+            >
+            <button
+              id="cart-btn"
+              class="relative p-2 text-marina-teal hover:text-marina-pink transition-colors"
+            >
+              <i class="fa-solid fa-cart-shopping text-2xl"></i>
+              <span
+                id="cart-count"
+                class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-marina-pink rounded-full"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sección Hero (Banner principal) -->
+    <header class="bg-marina-light py-12 sm:py-20 relative overflow-hidden">
+      <!-- Decoración de fondo -->
+      <div
+        class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+        style="
+          background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l1.43 1.43-56.056 56.056-1.43-1.43L54.627 0zm-30 0l1.43 1.43-26.056 26.056-1.43-1.43L24.627 0zM60 25.373l-1.43 1.43-33.197-33.197 1.43-1.43L60 25.373zM60 55.373l-1.43 1.43-3.197-3.197 1.43-1.43L60 55.373z' fill='%231f8f9f' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E&quot;);
+        "
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <h1
+          class="text-sm font-semibold tracking-[0.3em] text-marina-dark uppercase mb-4"
+        >
+          Entregas personales en Bahía Málaga, Pacífico
+        </h1>
+        <h2 class="text-4xl sm:text-5xl text-marina-teal mb-4 logo-text">
+          Belleza que fluye como el mar
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-600 mb-8">
+          Descubre nuestra selección exclusiva de productos de belleza. Brilla
+          con la naturalidad y frescura del océano.
+        </p>
+      </div>
+    </header>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="nosotros" class="bg-marina-light py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold text-marina-dark mb-6 text-center">
+          Sobre Nosotros
+        </h2>
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <p class="text-gray-700 leading-relaxed text-lg mb-4">
+            Marina Beauty nace de una necesidad genuina:
+            <strong
+              >brindar belleza y autoestima a las mujeres de la Base Naval de
+              Bahía Málaga</strong
+            >.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg mb-4">
+            Ubicada en el corazón del Pacífico colombiano, sabemos que el acceso
+            a productos de belleza de calidad puede ser limitado. Por eso, nos
+            dedicamos a seleccionar cuidadosamente cada producto, garantizando
+            que sean amigables con la piel, prácticos de usar y accesibles en
+            precio.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Nuestro compromiso es simple:
+            <strong>ofertar belleza real, entregas personales confiables</strong
+            >, y atención genuina. Cada compra en Marina Beauty es un acto de
+            autocuidado y confianza.
+          </p>
+          <div class="mt-6 flex justify-center gap-4 text-marina-pink text-3xl">
+            <i class="fa-solid fa-water"></i>
+            <i class="fa-solid fa-sparkles"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+      <div class="flex items-center justify-between mb-8">
+        <h3 id="catalogo" class="text-2xl font-semibold text-marina-dark">
+          Nuestro Catálogo
+        </h3>
+      </div>
+
+      <!-- Grid de Productos -->
+      <div
+        id="products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+      >
+        <!-- Los productos se inyectarán aquí con JavaScript -->
+      </div>
+    </main>
+
+    <!-- Política de Devoluciones y Garantía - OCULTA EN PÁGINA PRINCIPAL -->
+    <section id="politica" class="hidden bg-white py-12">
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- Botón para cerrar la política (solo en móvil) -->
+        <div class="flex justify-between items-center mb-8 sm:justify-center">
+          <h1 class="text-4xl sm:text-5xl font-bold text-marina-teal">
+            Protegemos tu compra
+          </h1>
+          <button
+            onclick="
+              document.getElementById('politica').classList.toggle('hidden')
+            "
+            class="sm:hidden text-2xl text-marina-pink"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          En Marina Beauty nos comprometemos con la calidad y satisfacción de
+          nuestros clientes. Conoce nuestras políticas de garantía, devoluciones
+          y atención.
+        </p>
+
+        <!-- Sección 1: Garantía de Autenticidad -->
+        <div class="bg-marina-light rounded-2xl p-8 mb-8">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-shield-check text-marina-pink text-3xl"></i>
+            Garantía de Autenticidad
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-5 shadow-sm">
+              <h3 class="font-bold text-marina-dark mb-3">
+                Productos Certificados
+              </h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>100% originales y auténticos</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Certificados por proveedores autorizados</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span
+                    >Empaques originales y sellos de seguridad intactos</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-5 shadow-sm">
+              <h3 class="font-bold text-marina-dark mb-3">
+                Control de Calidad
+              </h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Inspección rigurosa antes de enviar</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Dentro de fecha de vencimiento</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Garantía desde el momento de la compra</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 2: Política de Devoluciones -->
+        <div
+          class="bg-gradient-to-r from-marina-pink/10 to-marina-teal/10 rounded-2xl p-8 mb-8"
+        >
+          <h2
+            class="text-2xl font-bold text-marina-dark mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-undo text-marina-pink text-3xl"></i> Política
+            de Devoluciones
+          </h2>
+          <div class="bg-white rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-bold text-marina-teal mb-4">
+              Plazo de Devolución: 7 Días
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Tienes 7 días calendario desde la recepción del producto para
+              solicitar una devolución.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-bold text-marina-dark mb-3">
+                  ✓ Devoluciones Aceptadas:
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>· Producto sin uso y sin abrir</li>
+                  <li>· En empaque original intacto</li>
+                  <li>· Con todos los accesorios incluidos</li>
+                  <li>· Dentro del plazo de 7 días</li>
+                  <li>· Con defecto de fábrica</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark mb-3">
+                  ✗ Devoluciones No Aceptadas:
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>· Producto abierto o usado</li>
+                  <li>· Empaque dañado o sin sellos</li>
+                  <li>· Pasados los 7 días</li>
+                  <li>· Productos con porcentaje usado</li>
+                  <li>· Sin prueba de compra</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bg-yellow-50 border-l-4 border-marina-pink p-4 rounded">
+            <p class="text-sm text-gray-700">
+              <strong>Nota importante:</strong> Las devoluciones son válidas
+              únicamente en Bahía Málaga. El cliente debe contactar por WhatsApp
+              dentro de 48 horas de detectar un defecto.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección 3: Proceso de Devolución -->
+        <div class="bg-white rounded-2xl p-8 mb-8 border-2 border-marina-light">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-list-check text-marina-pink text-3xl"></i>
+            Cómo Devolver un Producto
+          </h2>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">
+                  Contacta por WhatsApp
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Envía fotos del producto y describe el motivo de la devolución
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">
+                  Confirmación de Devolución
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Nuestro equipo validará tu solicitud en máximo 24 horas
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                3
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">Empacar el Producto</h4>
+                <p class="text-sm text-gray-600">
+                  Devuelve el producto en su empaque original con todos los
+                  accesorios
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                4
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">Reembolso</h4>
+                <p class="text-sm text-gray-600">
+                  Recibe tu reembolso del 100% una vez validemos el producto
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 4: Productos con Descuento -->
+        <div
+          class="bg-gradient-to-r from-marina-teal to-marina-dark rounded-2xl p-8 mb-8 text-white"
+        >
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <i class="fa-solid fa-tag text-yellow-300 text-3xl"></i> Promoción:
+            30% en Segunda Unidad
+          </h2>
+          <p class="mb-4">
+            En Marina Beauty te ofrecemos una promoción especial en referencias
+            seleccionadas.
+          </p>
+          <div class="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
+            <p class="text-sm">
+              Compra dos unidades del mismo producto y obtén un
+              <strong>30% de descuento en la segunda unidad</strong> en
+              referencias seleccionadas. ¡Consulta con nosotras por WhatsApp
+              cuáles son los productos con esta promoción!
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección 5: Preguntas Frecuentes -->
+        <div class="bg-white rounded-2xl p-8 mb-8 border-2 border-marina-light">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i
+              class="fa-solid fa-circle-question text-marina-pink text-3xl"
+            ></i>
+            Preguntas Frecuentes
+          </h2>
+          <div class="space-y-4">
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Todos los productos tienen garantía?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Sí, todos nuestros productos tienen garantía de autenticidad y
+                calidad desde el momento de la compra.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Qué pasa si el producto llega dañado?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Contacta por WhatsApp dentro de 48 horas con fotos del daño.
+                Realizaremos el cambio sin costo adicional.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Puedo devolver un producto usado?
+              </h4>
+              <p class="text-sm text-gray-700">
+                No, solo aceptamos devoluciones de productos sin usar, con
+                empaque original intacto.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Cuál es el plazo máximo para devolver?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Tienes 7 días calendario desde la recepción del producto para
+                solicitar una devolución.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Dónde entrega Marina Beauty?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Realizamos entregas personales en Bahía Málaga, Pacífico.
+                Contáctanos para acordar fecha y hora.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 6: Contáctanos -->
+        <div
+          class="bg-gradient-to-r from-marina-pink to-marina-teal rounded-2xl p-8 text-white text-center"
+        >
+          <h2 class="text-2xl font-bold mb-4">¿Más dudas?</h2>
+          <p class="mb-6">
+            Nuestro equipo está disponible para ayudarte con cualquier pregunta
+            o inconveniente
+          </p>
+          <button
+            onclick="
+              window.open(
+                'https://wa.me/573233208748?text=Hola%20Marina%20Beauty,%20tengo%20una%20pregunta%20sobre%20garantía%20y%20devoluciones',
+                '_blank',
+              )
+            "
+            class="bg-white text-marina-teal font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Contacta por WhatsApp
+          </button>
+          <p class="text-sm mt-4 opacity-90">
+            Respuestas rápidas • Atención personalizada • Horario: Lunes a
+            Viernes
+          </p>
+        </div>
+
+        <!-- Botón para cerrar -->
+        <div class="text-center mt-8">
+          <button
+            onclick="
+              document.getElementById('politica').classList.toggle('hidden')
+            "
+            class="px-6 py-3 bg-marina-light text-marina-teal font-bold rounded-full hover:bg-marina-teal hover:text-white transition-all"
+          >
+            <i class="fa-solid fa-arrow-up"></i> Volver al Catálogo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white border-t border-marina-light py-8 text-center mt-auto"
+    >
+      <div class="flex justify-center gap-4 mb-4 text-marina-pink text-xl">
+        <i class="fa-solid fa-water"></i>
+        <i class="fa-solid fa-shell"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="text-marina-dark font-semibold">Marina Beauty</p>
+      <p class="text-sm text-gray-500 mt-2">
+        Atención y entregas en persona en Bahía Málaga.
+      </p>
+      <button
+        id="policy-footer-btn"
+        class="mt-4 px-4 py-2 bg-marina-light text-marina-teal font-semibold rounded-full hover:bg-marina-teal hover:text-white transition-all"
+      >
+        <i class="fa-solid fa-scroll"></i> Garantía y Política
+      </button>
+    </footer>
+
+    <!-- Sidebar del Carrito (Oculto por defecto) -->
+    <div
+      id="cart-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden transition-opacity"
+    ></div>
+    <div
+      id="cart-sidebar"
+      class="fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col"
+    >
+      <div
+        class="p-6 border-b border-gray-100 flex justify-between items-center bg-marina-light"
+      >
+        <h2
+          class="text-xl font-semibold text-marina-dark flex items-center gap-2"
+        >
+          <i class="fa-solid fa-bag-shopping"></i> Tu Pedido
+        </h2>
+        <button
+          id="close-cart-btn"
+          class="text-gray-500 hover:text-marina-pink text-2xl"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div
+        id="cart-items"
+        class="flex-grow p-6 overflow-y-auto no-scrollbar flex flex-col gap-4"
+      >
+        <!-- Los items del carrito aparecerán aquí -->
+        <div id="empty-cart-msg" class="text-center text-gray-400 mt-10">
+          <i class="fa-solid fa-basket-shopping text-4xl mb-3 opacity-50"></i>
+          <p>Tu bolsa está vacía.</p>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-gray-100 bg-white space-y-3">
+        <div
+          class="flex justify-between items-center mb-4 text-lg font-semibold text-gray-800"
+        >
+          <span>Total Estimado:</span>
+          <span id="cart-total" class="text-marina-teal">$0</span>
+        </div>
+        <button
+          id="checkout-btn"
+          class="w-full bg-marina-teal hover:bg-marina-dark text-white font-semibold py-3 rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg shadow-marina-teal/30 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <img
+            src="images/whatsapp-logo.png"
+            alt="WhatsApp"
+            class="h-5 w-5 object-contain"
+          />
+          Pedir por WhatsApp
+        </button>
+        <button
+          id="continue-shopping-btn"
+          class="w-full bg-gray-200 hover:bg-gray-300 text-marina-dark font-semibold py-3 rounded-full transition-colors flex items-center justify-center gap-2"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Seguir Comprando
+        </button>
+        <button
+          id="policy-cart-btn"
+          class="w-full bg-marina-light hover:bg-marina-pink/20 text-marina-teal font-semibold py-2 rounded-full transition-colors text-sm"
+        >
+          <i class="fa-solid fa-shield-check"></i> Garantía y Devoluciones
+        </button>
+        <p class="text-xs text-center text-gray-500">
+          El pago se acuerda al momento de la entrega en Bahía Málaga.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lógica de la Tienda -->
+    <script>
+      // --- 1. CONFIGURACIÓN DEL NEGOCIO ---
+      const NUMERO_WHATSAPP = "573233208748";
+
+      // --- 2. CATÁLOGO DE PRODUCTOS ---
+      const productos = [
+        {
+          id: "p1",
+          name: "Beauty Blender tipo Huevito",
+          description: "Esponja de maquillaje suave y flexible",
+          price: 7244,
+          image: "images/beautyblender.jpeg",
+          stock: 5,
+        },
+        {
+          id: "p2",
+          name: "Rizador de Pestañas GlobalStar",
+          description: "Rizador profesional con presión ajustable",
+          price: 12244,
+          image: "images/risasordepestanas.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p3",
+          name: "Limpiador de Brochas",
+          description: "Limpia profundamente tus brochas de maquillaje",
+          price: 10244,
+          image: "images/limpiadordebrochas.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p4",
+          name: "Kit de Brochas Difuminadoras Alma Beauty",
+          description:
+            "Set profesional de brochas Alma Beauty para difuminar sombras",
+          price: 16244,
+          image: "images/kitbrochasdifuminadoras.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p5",
+          name: "Kit Brochas Alma Beauty x10 Unidades",
+          description: "Set completo de 10 brochas profesionales Alma Beauty",
+          price: 19244,
+          image: "images/kitbrochasalma.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p6",
+          name: "Cepillo Exfoliante Facial",
+          description:
+            "Cepillo exfoliante profesional para limpieza profunda facial",
+          price: 11244,
+          image: "images/cepilloexfoliante.png",
+          stock: 3,
+        },
+        {
+          id: "p7",
+          name: "Tinta para Labios",
+          description: "Deja un color natural sin sensación pesada",
+          price: 8244,
+          image: "images/tinteparalabios.jpeg",
+          stock: 6,
+        },
+        {
+          id: "p8",
+          name: "Labial Matte Color Intenso",
+          description: "Labial mate con pigmentación alta y larga duración",
+          price: 10244,
+          image: "images/labialmate.jpeg",
+          stock: 6,
+        },
+        {
+          id: "p9",
+          name: "Corrector Lumi Matte",
+          description: "Corrector con acabado matte y cobertura completa",
+          price: 10244,
+          image: "images/correctorlumimate.jpeg",
+          stock: 6,
+        },
+        {
+          id: "p10",
+          name: "Dúo de Iluminadores",
+          description: "Textura ultra luminosa con acabado brillante",
+          price: 12244,
+          image: "images/iluminadores.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p11",
+          name: "Paleta 15 Tonos Mattes y Satinados",
+          description: "Paleta versátil con colores hermosos",
+          price: 2244,
+          image: "images/paleta15colores.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p12",
+          name: "Base Fit Me",
+          description: "Base ligera con cobertura natural y larga duración",
+          price: 9244,
+          image: "images/basefitme.jpeg",
+          stock: 3,
+        },
+        {
+          id: "p13",
+          name: "Contorno",
+          description: "Cobertura alta y fácil de usar",
+          price: 8244,
+          image: "images/contorno.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p14",
+          name: "Polvo Compacto Traslúcido",
+          description: "Matifica y elimina grasa de la piel",
+          price: 14244,
+          image: "images/polvotranslucido.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p15",
+          name: "Polvos Sueltos INFALLIBLE Ultra HD",
+          description: "Polvos ultra finos con acabado HD",
+          price: 18244,
+          image: "images/polvosuelto.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p16",
+          name: "Rubor Líquido",
+          description: "Rubor con textura líquida y acabado mate",
+          price: 12244,
+          image: "images/ruborliquido.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p17",
+          name: "Rubor Mágico Multifuncional",
+          description: "Activa el color acorde a tu pH",
+          price: 14244,
+          image: "images/rubormagico.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p18",
+          name: "Rubor Compacto",
+          description: "Rubor en polvo compacto con acabado suave",
+          price: 11244,
+          image: "images/ruborcompacto.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p19",
+          name: "Jabón de Cejas",
+          description: "Para moldear y definir tus cejas",
+          price: 12244,
+          image: "images/jabondecejas.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p20",
+          name: "Lápiz Retráctil de Cejas",
+          description: "Buena pigmentación y fácil de aplicar",
+          price: 9844,
+          image: "images/lapizretractil.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p21",
+          name: "Delineador en Plumón",
+          description: "Delineador preciso con punta fina",
+          price: 7244,
+          image: "images/delineadorplumon.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p22",
+          name: "Paleta de Sombras NUDE",
+          description: "Tonos tierra perfectos para diario",
+          price: 16044,
+          image: "images/paletadesombras.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p23",
+          name: "Paleta Sombras Colores Vibrantes",
+          description: "Colores vibrantes y atrevidos",
+          price: 32244,
+          image: "images/paletasombrasbrillantes.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p24",
+          name: "Paleta Tonos Súper Pigmentados",
+          description: "Tonos intensos y fáciles de difuminar",
+          price: 19844,
+          image: "images/paletatonospigmentados.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p25",
+          name: "Máscara Efecto Volumen",
+          description: "Máscara que multiplica el volumen de pestañas",
+          price: 7644,
+          image: "images/mascaravolumen.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p26",
+          name: "Cepillo para Pestañas y Cejas",
+          description: "Cepillo doble para pestañas y cejas",
+          price: 7244,
+          image: "images/cepillocejas.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p27",
+          name: "Lip Gloss Cream Fresita",
+          description: "Lip gloss cremoso con olor fresita",
+          price: 6244,
+          image: "images/lipgloss.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p28",
+          name: "Gloss Hidratante sin Color",
+          description: "Brillo transparente ultra hidratante",
+          price: 10244,
+          image: "images/glosshidratante.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p29",
+          name: "Lip Gloss con Tono",
+          description: "Gloss con color y brillo",
+          price: 11444,
+          image: "images/lipglosscontono.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p30",
+          name: "Lip Gloss Mágico",
+          description: "Gloss que cambia de color",
+          price: 9244,
+          image: "images/lipglossmagico.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p31",
+          name: "Voluminizador de Labios Aloe Vera",
+          description: "Voluminizador con aloe vera hidratante",
+          price: 11644,
+          image: "images/voluminizadoraloe.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p32",
+          name: "Agua de Rosas Natural 250ml",
+          description: "Agua de rosas pura con extractos naturales",
+          price: 8844,
+          image: "images/aguaderosas.jpeg",
+          stock: 2,
+        },
+        {
+          id: "p33",
+          name: "Pomada para Cejas Tono Medio",
+          description: "Pomada para cejas tono medio",
+          price: 17000,
+          image: "images/pomadaparacejas.jpeg",
+          stock: 1,
+        },
+        {
+          id: "p34",
+          name: "Lápiz Delineador de Labios Samy",
+          description: "Delineador de labios de larga duración",
+          price: 6000,
+          image: "images/lapizdelineador.jpeg",
+          stock: 2,
+        },
+      ];
+
+      // --- 3. ESTADO DEL CARRITO ---
+      let carrito = [];
+
+      // --- 4. FUNCIONES DE UTILIDAD ---
+      // Los precios son directos
+      function calcularPrecioVenta(precio) {
+        return precio;
+      }
+
+      // Formatear a pesos colombianos
+      function formatearMoneda(valor) {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(valor);
+      }
+
+      function renderizarProductos() {
+        const grid = document.getElementById("products-grid");
+        grid.innerHTML = "";
+
+        productos.forEach((prod) => {
+          const precioVenta = calcularPrecioVenta(prod.price || 0);
+          const card = document.createElement("div");
+          card.className =
+            "bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full border border-gray-100";
+
+          const badgeClass =
+            prod.price === null ? "producto-sin-precio" : "price-badge";
+          const precioTexto =
+            prod.price === null
+              ? "Precio No Disponible"
+              : formatearMoneda(precioVenta);
+          const stockTexto =
+            prod.stock > 0 ? `Stock: ${prod.stock}` : "Agotado";
+          const btnDisabled =
+            prod.stock === 0 ? "opacity-50 cursor-not-allowed" : "";
+          const btnOnclick =
+            prod.stock === 0 ? "" : `agregarAlCarrito('${prod.id}')`;
+
+          card.innerHTML = `
+            <div class="relative overflow-hidden h-32 sm:h-40 bg-gray-200">
+              <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 text-xs font-bold text-white bg-black bg-opacity-70 px-2 py-1 rounded">${stockTexto}</div>
+            </div>
+            <div class="p-3 flex flex-col flex-grow">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-800 mb-1 line-clamp-2">${prod.name}</h4>
+              <p class="text-xs text-gray-600 mb-2 flex-grow line-clamp-2">${prod.description}</p>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-sm sm:text-base font-bold ${badgeClass} text-white px-3 py-1 rounded-full">${precioTexto}</span>
+                <button onclick="${btnOnclick}" class="bg-marina-light text-marina-teal hover:bg-marina-teal hover:text-white rounded-full w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-xs sm:text-sm transition-colors ${btnDisabled}" ${prod.stock === 0 ? "disabled" : ""}>
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      // --- 6. LÓGICA DEL CARRITO ---
+      function agregarAlCarrito(idProducto) {
+        const producto = productos.find((p) => p.id === idProducto);
+        if (!producto) return;
+
+        const itemExistente = carrito.find(
+          (item) => item.producto.id === idProducto,
+        );
+
+        if (itemExistente) {
+          itemExistente.cantidad += 1;
+        } else {
+          carrito.push({ producto: producto, cantidad: 1 });
+        }
+
+        actualizarUI();
+        abrirCarrito();
+      }
+
+      function cambiarCantidad(idProducto, delta) {
+        const index = carrito.findIndex(
+          (item) => item.producto.id === idProducto,
+        );
+        if (index !== -1) {
+          carrito[index].cantidad += delta;
+          if (carrito[index].cantidad <= 0) {
+            carrito.splice(index, 1);
+          }
+          actualizarUI();
+        }
+      }
+
+      function actualizarUI() {
+        // Actualizar contador
+        const totalItems = carrito.reduce(
+          (sum, item) => sum + item.cantidad,
+          0,
+        );
+        document.getElementById("cart-count").innerText = totalItems;
+
+        // Actualizar vista del carrito
+        const contenedorItems = document.getElementById("cart-items");
+        const msjVacio = document.getElementById("empty-cart-msg");
+        const btnCheckout = document.getElementById("checkout-btn");
+
+        // Limpiar items actuales pero preservar el mensaje de vacío
+        contenedorItems.innerHTML = "";
+
+        if (carrito.length === 0) {
+          contenedorItems.innerHTML =
+            '<div id="empty-cart-msg" class="text-center text-gray-400 mt-10"><i class="fa-solid fa-basket-shopping text-4xl mb-3 opacity-50"></i><p>Tu bolsa está vacía.</p></div>';
+          btnCheckout.disabled = true;
+          document.getElementById("cart-total").innerText = "$0";
+          return;
+        }
+
+        btnCheckout.disabled = false;
+
+        let totalPagar = 0;
+
+        carrito.forEach((item) => {
+          const precioVenta = calcularPrecioVenta(item.producto.price);
+          const subtotal = precioVenta * item.cantidad;
+          totalPagar += subtotal;
+
+          const itemDiv = document.createElement("div");
+          itemDiv.className =
+            "flex gap-3 bg-gray-50 p-3 rounded-xl items-center";
+          itemDiv.innerHTML = `
+                    <img src="${item.producto.image}" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-grow">
+                        <h5 class="text-sm font-semibold text-gray-800 line-clamp-1">${item.producto.name}</h5>
+                        <p class="text-marina-teal font-bold text-sm">${formatearMoneda(precioVenta)}</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 bg-white rounded-lg border border-gray-200">
+                        <button onclick="cambiarCantidad('${item.producto.id}', 1)" class="px-2 py-1 text-gray-500 hover:text-marina-teal"><i class="fa-solid fa-plus text-xs"></i></button>
+                        <span class="text-sm font-semibold w-6 text-center">${item.cantidad}</span>
+                        <button onclick="cambiarCantidad('${item.producto.id}', -1)" class="px-2 py-1 text-gray-500 hover:text-marina-pink"><i class="fa-solid fa-minus text-xs"></i></button>
+                    </div>
+                `;
+          contenedorItems.appendChild(itemDiv);
+        });
+
+        document.getElementById("cart-total").innerText =
+          formatearMoneda(totalPagar);
+      }
+
+      // --- 7. CONTROL DE LA INTERFAZ DEL CARRITO ---
+      const sidebar = document.getElementById("cart-sidebar");
+      const overlay = document.getElementById("cart-overlay");
+      const pageBody = document.getElementById("page-body");
+
+      function abrirCarrito() {
+        sidebar.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+        pageBody.style.overflow = "hidden"; // Bloquear scroll
+        // Pequeño delay para la animación de opacidad
+        setTimeout(() => overlay.classList.add("opacity-100"), 10);
+      }
+
+      function cerrarCarrito() {
+        sidebar.classList.add("translate-x-full");
+        overlay.classList.remove("opacity-100");
+        pageBody.style.overflow = "auto"; // Permitir scroll nuevamente
+        setTimeout(() => overlay.classList.add("hidden"), 300);
+      }
+
+      function togglePolitica() {
+        const politicaSection = document.getElementById("politica");
+        politicaSection.classList.toggle("hidden");
+        if (!politicaSection.classList.contains("hidden")) {
+          // Scroll a la sección de política
+          politicaSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      document
+        .getElementById("cart-btn")
+        .addEventListener("click", abrirCarrito);
+      document
+        .getElementById("close-cart-btn")
+        .addEventListener("click", cerrarCarrito);
+      document
+        .getElementById("continue-shopping-btn")
+        .addEventListener("click", cerrarCarrito);
+      document
+        .getElementById("policy-cart-btn")
+        .addEventListener("click", togglePolitica);
+      document
+        .getElementById("policy-footer-btn")
+        .addEventListener("click", togglePolitica);
+      overlay.addEventListener("click", cerrarCarrito);
+
+      // --- 8. PROCESAR PEDIDO (WHATSAPP) ---
+      document.getElementById("checkout-btn").addEventListener("click", () => {
+        if (carrito.length === 0) return;
+
+        let textoPedido = "🛍️ *PEDIDO MARINA BEAUTY* 🛍️\n\n";
+        let totalPagar = 0;
+
+        carrito.forEach((item) => {
+          const precio = item.producto.price || 0;
+          const subtotal = precio * item.cantidad;
+          totalPagar += subtotal;
+
+          textoPedido += `✓ ${item.cantidad}x ${item.producto.name}\n  ${formatearMoneda(precio)} c/u = ${formatearMoneda(subtotal)}\n\n`;
+        });
+
+        textoPedido += `━━━━━━━━━━━━━━━━━\n*TOTAL: ${formatearMoneda(totalPagar)}*\n━━━━━━━━━━━━━━━━━\n\n¿Confirmas este pedido? 💕`;
+
+        const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(textoPedido)}`;
+        window.open(urlWhatsApp, "_blank");
+      });
+
+      // --- 9. INICIALIZACIÓN ---
+      document.addEventListener("DOMContentLoaded", () => {
+        renderizarProductos();
+        actualizarUI(); // Inicializa el contador en 0
+      });
+    </script>
+  </body>
+</html>

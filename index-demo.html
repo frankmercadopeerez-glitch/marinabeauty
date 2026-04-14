@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marina Beauty | Belleza que fluye como el mar - DEMO</title>
+
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuentes de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              marina: {
+                teal: "#1f8f9f",
+                dark: "#0e6574",
+                pink: "#f79fb0",
+                light: "#e0f6f9",
+                sand: "#fdfbf7",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              script: ["Parisienne", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fdfbf7;
+      }
+      .logo-text {
+        font-family: "Parisienne", cursive;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .demo-badge {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 antialiased flex flex-col min-h-screen relative">
+    <div class="demo-badge">
+      🎨 VERSIÓN DEMO <br />
+      (Con imágenes de ejemplo)
+    </div>
+
+    <!-- Navegación -->
+    <nav
+      class="bg-white shadow-sm sticky top-0 z-40 bg-opacity-95 backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex-shrink-0 flex items-center gap-3">
+            <i class="fa-solid fa-gem text-marina-pink text-2xl"></i>
+            <div class="flex flex-col">
+              <span
+                class="logo-text text-4xl text-marina-teal leading-none"
+                style="transform: translateY(5px)"
+                >Marina</span
+              >
+              <span
+                class="text-[10px] tracking-[0.2em] text-marina-dark font-semibold uppercase text-center"
+                >Beauty</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-4 sm:gap-8">
+            <a
+              href="#catalogo"
+              class="text-marina-teal hover:text-marina-pink transition-colors font-medium text-sm"
+              >Catálogo</a
+            >
+            <a
+              href="#nosotros"
+              class="text-marina-teal hover:text-marina-pink transition-colors font-medium text-sm"
+              >Sobre Nosotros</a
+            >
+            <button
+              id="cart-btn"
+              class="relative p-2 text-marina-teal hover:text-marina-pink transition-colors"
+            >
+              <i class="fa-solid fa-cart-shopping text-2xl"></i>
+              <span
+                id="cart-count"
+                class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-marina-pink rounded-full"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="bg-marina-light py-12 sm:py-20 relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+        style="
+          background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l1.43 1.43-56.056 56.056-1.43-1.43L54.627 0zm-30 0l1.43 1.43-26.056 26.056-1.43-1.43L24.627 0zM60 25.373l-1.43 1.43-33.197-33.197 1.43-1.43L60 25.373zM60 55.373l-1.43 1.43-3.197-3.197 1.43-1.43L60 55.373z' fill='%231f8f9f' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E&quot;);
+        "
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <h1
+          class="text-sm font-semibold tracking-[0.3em] text-marina-dark uppercase mb-4"
+        >
+          Entregas personales en Bahía Málaga, Pacífico
+        </h1>
+        <h2 class="text-4xl sm:text-5xl text-marina-teal mb-4 logo-text">
+          Belleza que fluye como el mar
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-600 mb-8">
+          Descubre nuestra selección exclusiva de productos de belleza. Brilla
+          con la naturalidad y frescura del océano.
+        </p>
+      </div>
+    </header>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="nosotros" class="bg-marina-light py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold text-marina-dark mb-6 text-center">
+          Sobre Nosotros
+        </h2>
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <p class="text-gray-700 leading-relaxed text-lg mb-4">
+            Marina Beauty nace de una necesidad genuina:
+            <strong
+              >brindar belleza y autoestima a las mujeres de la Base Naval de
+              Bahía Málaga</strong
+            >.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg mb-4">
+            Ubicada en el corazón del Pacífico colombiano, sabemos que el acceso
+            a productos de belleza de calidad puede ser limitado. Por eso, nos
+            dedicamos a seleccionar cuidadosamente cada producto, garantizando
+            que sean amigables con la piel, prácticos de usar y accesibles en
+            precio.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Nuestro compromiso es simple:
+            <strong>ofertar belleza real, entregas personales confiables</strong
+            >, y atención genuina. Cada compra en Marina Beauty es un acto de
+            autocuidado y confianza.
+          </p>
+          <div class="mt-6 flex justify-center gap-4 text-marina-pink text-3xl">
+            <i class="fa-solid fa-water"></i>
+            <i class="fa-solid fa-sparkles"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+      <div class="flex items-center justify-between mb-8">
+        <h3 id="catalogo" class="text-2xl font-semibold text-marina-dark">
+          Nuestro Catálogo
+        </h3>
+      </div>
+
+      <div
+        id="products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+      >
+        <!-- Productos se generarán aquí -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white border-t border-marina-light py-8 text-center mt-auto"
+    >
+      <div class="flex justify-center gap-4 mb-4 text-marina-pink text-xl">
+        <i class="fa-solid fa-water"></i>
+        <i class="fa-solid fa-shell"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="text-marina-dark font-semibold">Marina Beauty</p>
+      <p class="text-sm text-gray-500 mt-2">
+        Atención y entregas en persona en Bahía Málaga.
+      </p>
+    </footer>
+
+    <!-- Carrito -->
+    <div
+      id="cart-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden transition-opacity"
+    ></div>
+    <div
+      id="cart-sidebar"
+      class="fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col"
+    >
+      <div
+        class="p-6 border-b border-gray-100 flex justify-between items-center bg-marina-light"
+      >
+        <h2
+          class="text-xl font-semibold text-marina-dark flex items-center gap-2"
+        >
+          <i class="fa-solid fa-bag-shopping"></i> Tu Pedido
+        </h2>
+        <button
+          id="close-cart-btn"
+          class="text-gray-500 hover:text-marina-pink text-2xl"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div
+        id="cart-items"
+        class="flex-grow p-6 overflow-y-auto no-scrollbar flex flex-col gap-4"
+      >
+        <div id="empty-cart-msg" class="text-center text-gray-400 mt-10">
+          <i class="fa-solid fa-basket-shopping text-4xl mb-3 opacity-50"></i>
+          <p>Tu bolsa está vacía.</p>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-gray-100 bg-white">
+        <div
+          class="flex justify-between items-center mb-4 text-lg font-semibold text-gray-800"
+        >
+          <span>Total Estimado:</span>
+          <span id="cart-total" class="text-marina-teal">$0</span>
+        </div>
+        <button
+          id="checkout-btn"
+          class="w-full bg-marina-teal hover:bg-marina-dark text-white font-semibold py-3 rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg shadow-marina-teal/30 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          Pedir por WhatsApp
+        </button>
+        <p class="text-xs text-center text-gray-500 mt-3">
+          El pago se acuerda al momento de la entrega en Bahía Málaga.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // CONFIGURACIÓN
+      const MARGEN_GANANCIA_PORCENTAJE = 0.35;
+      const COSTO_ENVIO_TOTAL = 35900;
+      const CANTIDAD_PRODUCTOS = 12;
+      const COSTO_ENVIO_POR_PRODUCTO = Math.round(
+        COSTO_ENVIO_TOTAL / CANTIDAD_PRODUCTOS,
+      );
+      const NUMERO_WHATSAPP = "573000000000"; // CAMBIAR A TU NÚMERO
+
+      // PRODUCTOS CON IMÁGENES DE DEMO
+      const productos = [
+        {
+          id: "p1",
+          name: "Cepillo Exfoliante Facial",
+          description: "Cepillo de silicona de calidad alimentaria.",
+          basePrice: 6000,
+          image:
+            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p2",
+          name: "Toallas Desmaquillantes",
+          description: "Toallas reutilizables y suaves.",
+          basePrice: 5500,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p3",
+          name: "Papelitos de Arroz",
+          description: "Papelitos absorbentes con extracto de arroz.",
+          basePrice: 3000,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p4",
+          name: "Parche Antiacné",
+          description: "Parches de extracción para acné.",
+          basePrice: 2500,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p5",
+          name: "Brochas Negras",
+          description: "Set de brochas profesionales negras.",
+          basePrice: 13000,
+          image:
+            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p6",
+          name: "Mascarilla Negra",
+          description: "Mascarilla detoxificante de carbón activado.",
+          basePrice: 500,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p7",
+          name: "Brochas Blancas",
+          description: "Set premium de brochas blancas.",
+          basePrice: 16000,
+          image:
+            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p8",
+          name: "Mascarilla de Labios",
+          description: "Mascarilla hidratante para labios.",
+          basePrice: 800,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p9",
+          name: "Fijador de Maquillaje",
+          description: "Spray fijador de larga duración.",
+          basePrice: 6000,
+          image:
+            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p10",
+          name: "Agua de Rosas",
+          description: "Agua de rosas pura 100% natural.",
+          basePrice: 5400,
+          image:
+            "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p11",
+          name: "Pomos de Almacenamiento",
+          description: "Pomos de vidrio herméticamente sellados.",
+          basePrice: 5500,
+          image:
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+        {
+          id: "p12",
+          name: "Espuma Limpiadora",
+          description: "Espuma facial suave para limpieza diaria.",
+          basePrice: 7500,
+          image:
+            "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400&h=400",
+        },
+      ];
+
+      let carrito = [];
+
+      function calcularPrecioVenta(costoBase) {
+        const costoTotal = costoBase + COSTO_ENVIO_POR_PRODUCTO;
+        const precioVenta = Math.round(
+          costoTotal / (1 - MARGEN_GANANCIA_PORCENTAJE),
+        );
+        return precioVenta;
+      }
+
+      function formatearMoneda(valor) {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(valor);
+      }
+
+      function renderizarProductos() {
+        const grid = document.getElementById("products-grid");
+        grid.innerHTML = "";
+
+        productos.forEach((prod) => {
+          const precioVenta = calcularPrecioVenta(prod.basePrice);
+          const card = document.createElement("div");
+          card.className =
+            "bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-50 flex flex-col h-full group";
+
+          card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-square">
+                        <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">${prod.name}</h4>
+                        <p class="text-sm text-gray-500 mb-4 flex-grow line-clamp-2">${prod.description}</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-xl font-bold text-marina-teal">${formatearMoneda(precioVenta)}</span>
+                            <button onclick="agregarAlCarrito('${prod.id}')" class="bg-marina-light text-marina-teal hover:bg-marina-teal hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+          grid.appendChild(card);
+        });
+      }
+
+      function agregarAlCarrito(idProducto) {
+        const producto = productos.find((p) => p.id === idProducto);
+        if (!producto) return;
+
+        const itemExistente = carrito.find(
+          (item) => item.producto.id === idProducto,
+        );
+
+        if (itemExistente) {
+          itemExistente.cantidad += 1;
+        } else {
+          carrito.push({ producto: producto, cantidad: 1 });
+        }
+
+        actualizarUI();
+        abrirCarrito();
+      }
+
+      function cambiarCantidad(idProducto, delta) {
+        const index = carrito.findIndex(
+          (item) => item.producto.id === idProducto,
+        );
+        if (index !== -1) {
+          carrito[index].cantidad += delta;
+          if (carrito[index].cantidad <= 0) {
+            carrito.splice(index, 1);
+          }
+          actualizarUI();
+        }
+      }
+
+      function actualizarUI() {
+        const totalItems = carrito.reduce(
+          (sum, item) => sum + item.cantidad,
+          0,
+        );
+        document.getElementById("cart-count").innerText = totalItems;
+
+        const contenedorItems = document.getElementById("cart-items");
+        const msjVacio = document.getElementById("empty-cart-msg");
+        const btnCheckout = document.getElementById("checkout-btn");
+
+        contenedorItems.innerHTML = "";
+
+        if (carrito.length === 0) {
+          contenedorItems.appendChild(msjVacio);
+          msjVacio.classList.remove("hidden");
+          btnCheckout.disabled = true;
+          document.getElementById("cart-total").innerText = "$0";
+          return;
+        }
+
+        msjVacio.classList.add("hidden");
+        btnCheckout.disabled = false;
+
+        let totalPagar = 0;
+
+        carrito.forEach((item) => {
+          const precioVenta = calcularPrecioVenta(item.producto.basePrice);
+          const subtotal = precioVenta * item.cantidad;
+          totalPagar += subtotal;
+
+          const itemDiv = document.createElement("div");
+          itemDiv.className =
+            "flex gap-3 bg-gray-50 p-3 rounded-xl items-center";
+          itemDiv.innerHTML = `
+                    <img src="${item.producto.image}" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-grow">
+                        <h5 class="text-sm font-semibold text-gray-800 line-clamp-1">${item.producto.name}</h5>
+                        <p class="text-marina-teal font-bold text-sm">${formatearMoneda(precioVenta)}</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 bg-white rounded-lg border border-gray-200">
+                        <button onclick="cambiarCantidad('${item.producto.id}', 1)" class="px-2 py-1 text-gray-500 hover:text-marina-teal"><i class="fa-solid fa-plus text-xs"></i></button>
+                        <span class="text-sm font-semibold w-6 text-center">${item.cantidad}</span>
+                        <button onclick="cambiarCantidad('${item.producto.id}', -1)" class="px-2 py-1 text-gray-500 hover:text-marina-pink"><i class="fa-solid fa-minus text-xs"></i></button>
+                    </div>
+                `;
+          contenedorItems.appendChild(itemDiv);
+        });
+
+        document.getElementById("cart-total").innerText =
+          formatearMoneda(totalPagar);
+      }
+
+      const sidebar = document.getElementById("cart-sidebar");
+      const overlay = document.getElementById("cart-overlay");
+
+      function abrirCarrito() {
+        sidebar.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+        setTimeout(() => overlay.classList.add("opacity-100"), 10);
+      }
+
+      function cerrarCarrito() {
+        sidebar.classList.add("translate-x-full");
+        overlay.classList.remove("opacity-100");
+        setTimeout(() => overlay.classList.add("hidden"), 300);
+      }
+
+      document
+        .getElementById("cart-btn")
+        .addEventListener("click", abrirCarrito);
+      document
+        .getElementById("close-cart-btn")
+        .addEventListener("click", cerrarCarrito);
+      overlay.addEventListener("click", cerrarCarrito);
+
+      document.getElementById("checkout-btn").addEventListener("click", () => {
+        if (carrito.length === 0) return;
+
+        let textoPedido =
+          "¡Hola *Marina Beauty*! 🌊🐚%0AQuiero realizar el siguiente pedido para entrega en *Bahía Málaga*:%0A%0A";
+        let total = 0;
+
+        carrito.forEach((item) => {
+          const precio = calcularPrecioVenta(item.producto.basePrice);
+          const subtotal = precio * item.cantidad;
+          total += subtotal;
+
+          textoPedido += `▪️ ${item.cantidad}x ${item.producto.name} - ${formatearMoneda(subtotal)}%0A`;
+        });
+
+        textoPedido += `%0A*TOTAL ESTIMADO:* ${formatearMoneda(total)}%0A%0A¡Quedo atenta para acordar la entrega! ✨`;
+
+        const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP}?text=${textoPedido}`;
+        window.open(urlWhatsApp, "_blank");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderizarProductos();
+        actualizarUI();
+      });
+    </script>
+  </body>
+</html>
