@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garantía y Políticas | Marina Beauty</title>
+    <link rel="icon" href="images/logomarina.jpeg" type="image/jpeg" />
+
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuentes de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              marina: {
+                teal: "#1f8f9f",
+                dark: "#0e6574",
+                pink: "#f79fb0",
+                light: "#e0f6f9",
+                sand: "#fdfbf7",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              script: ["Parisienne", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fdfbf7;
+      }
+      .logo-text {
+        font-family: "Parisienne", cursive;
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 antialiased flex flex-col min-h-screen">
+    <!-- Navegación -->
+    <nav
+      class="bg-white shadow-sm sticky top-0 z-40 bg-opacity-95 backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center gap-2 sm:gap-3 hover:opacity-80 transition"
+          >
+            <img
+              src="images/logomarina.jpeg"
+              alt="Marina Beauty"
+              class="h-12 w-12 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <span
+                class="logo-text text-2xl sm:text-3xl text-marina-teal leading-none"
+                >Marina</span
+              >
+              <span
+                class="text-[8px] sm:text-[10px] tracking-[0.2em] text-marina-dark font-bold uppercase"
+                >Beauty</span
+              >
+            </div>
+          </a>
+          <a
+            href="index.html"
+            class="px-4 py-2 bg-marina-light text-marina-teal font-semibold rounded-full hover:bg-marina-teal hover:text-white transition-all"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow">
+      <div class="max-w-5xl mx-auto px-4 py-12">
+        <!-- Encabezado -->
+        <div class="text-center mb-12">
+          <h1 class="text-4xl sm:text-5xl font-bold text-marina-teal mb-4">
+            Protegemos tu compra
+          </h1>
+          <p class="text-center text-gray-600 text-lg">
+            En Marina Beauty nos comprometemos con la calidad y satisfacción de
+            nuestros clientes. Conoce nuestras políticas de garantía,
+            devoluciones y atención.
+          </p>
+        </div>
+
+        <!-- Sección 1: Garantía de Autenticidad -->
+        <div class="bg-marina-light rounded-2xl p-8 mb-8">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-shield-check text-marina-pink text-3xl"></i>
+            Garantía de Autenticidad
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-5 shadow-sm">
+              <h3 class="font-bold text-marina-dark mb-3">
+                Productos Certificados
+              </h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>100% originales y auténticos</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Certificados por proveedores autorizados</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span
+                    >Empaques originales y sellos de seguridad intactos</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-5 shadow-sm">
+              <h3 class="font-bold text-marina-dark mb-3">
+                Control de Calidad
+              </h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Inspección rigurosa antes de enviar</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Dentro de fecha de vencimiento</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-marina-pink flex-shrink-0 mt-1"
+                  ></i>
+                  <span>Garantía desde el momento de la compra</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 2: Política de Devoluciones -->
+        <div
+          class="bg-gradient-to-r from-marina-pink/10 to-marina-teal/10 rounded-2xl p-8 mb-8"
+        >
+          <h2
+            class="text-2xl font-bold text-marina-dark mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-undo text-marina-pink text-3xl"></i> Política
+            de Devoluciones
+          </h2>
+          <div class="bg-white rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-bold text-marina-teal mb-4">
+              Plazo de Devolución: 7 Días
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Tienes 7 días calendario desde la recepción del producto para
+              solicitar una devolución.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-bold text-marina-dark mb-3">
+                  ✓ Devoluciones Aceptadas:
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>· Producto sin uso y sin abrir</li>
+                  <li>· En empaque original intacto</li>
+                  <li>· Con todos los accesorios incluidos</li>
+                  <li>· Dentro del plazo de 7 días</li>
+                  <li>· Con defecto de fábrica</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark mb-3">
+                  ✗ Devoluciones No Aceptadas:
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>· Producto abierto o usado</li>
+                  <li>· Empaque dañado o sin sellos</li>
+                  <li>· Pasados los 7 días</li>
+                  <li>· Productos con porcentaje usado</li>
+                  <li>· Sin prueba de compra</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bg-yellow-50 border-l-4 border-marina-pink p-4 rounded">
+            <p class="text-sm text-gray-700">
+              <strong>Nota importante:</strong> Las devoluciones son válidas
+              únicamente en Bahía Málaga. El cliente debe contactar por WhatsApp
+              dentro de 48 horas de detectar un defecto.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección 3: Proceso de Devolución -->
+        <div class="bg-white rounded-2xl p-8 mb-8 border-2 border-marina-light">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i class="fa-solid fa-list-check text-marina-pink text-3xl"></i>
+            Cómo Devolver un Producto
+          </h2>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">
+                  Contacta por WhatsApp
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Envía fotos del producto y describe el motivo de la devolución
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">
+                  Confirmación de Devolución
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Nuestro equipo validará tu solicitud en máximo 24 horas
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                3
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">Empacar el Producto</h4>
+                <p class="text-sm text-gray-600">
+                  Devuelve el producto en su empaque original con todos los
+                  accesorios
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="bg-marina-pink text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold"
+              >
+                4
+              </div>
+              <div>
+                <h4 class="font-bold text-marina-dark">Reembolso</h4>
+                <p class="text-sm text-gray-600">
+                  Recibe tu reembolso del 100% una vez validemos el producto
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 4: Productos con Descuento -->
+        <div
+          class="bg-gradient-to-r from-marina-teal to-marina-dark rounded-2xl p-8 mb-8 text-white"
+        >
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <i class="fa-solid fa-tag text-yellow-300 text-3xl"></i> Promoción:
+            30% en Segunda Unidad
+          </h2>
+          <p class="mb-4">
+            En Marina Beauty te ofrecemos una promoción especial en referencias
+            seleccionadas.
+          </p>
+          <div class="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
+            <p class="text-sm">
+              Compra dos unidades del mismo producto y obtén un
+              <strong>30% de descuento en la segunda unidad</strong> en
+              referencias seleccionadas. ¡Consulta con nosotras por WhatsApp
+              cuáles son los productos con esta promoción!
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección 5: Preguntas Frecuentes -->
+        <div class="bg-white rounded-2xl p-8 mb-8 border-2 border-marina-light">
+          <h2
+            class="text-2xl font-bold text-marina-teal mb-6 flex items-center gap-3"
+          >
+            <i
+              class="fa-solid fa-circle-question text-marina-pink text-3xl"
+            ></i>
+            Preguntas Frecuentes
+          </h2>
+          <div class="space-y-4">
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Todos los productos tienen garantía?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Sí, todos nuestros productos tienen garantía de autenticidad y
+                calidad desde el momento de la compra.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Qué pasa si el producto llega dañado?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Contacta por WhatsApp dentro de 48 horas con fotos del daño.
+                Realizaremos el cambio sin costo adicional.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Puedo devolver un producto usado?
+              </h4>
+              <p class="text-sm text-gray-700">
+                No, solo aceptamos devoluciones de productos sin usar, con
+                empaque original intacto.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Cuál es el plazo máximo para devolver?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Tienes 7 días calendario desde la recepción del producto para
+                solicitar una devolución.
+              </p>
+            </div>
+            <div class="bg-marina-light rounded-lg p-4">
+              <h4 class="font-bold text-marina-dark mb-2">
+                ¿Dónde entrega Marina Beauty?
+              </h4>
+              <p class="text-sm text-gray-700">
+                Realizamos entregas personales en Bahía Málaga, Pacífico.
+                Contáctanos para acordar fecha y hora.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 6: Contáctanos -->
+        <div
+          class="bg-gradient-to-r from-marina-pink to-marina-teal rounded-2xl p-8 text-white text-center"
+        >
+          <h2 class="text-2xl font-bold mb-4">¿Más dudas?</h2>
+          <p class="mb-6">
+            Nuestro equipo está disponible para ayudarte con cualquier pregunta
+            o inconveniente
+          </p>
+          <a
+            href="https://wa.me/573233208748?text=Hola%20Marina%20Beauty,%20tengo%20una%20pregunta%20sobre%20garantía%20y%20devoluciones"
+            target="_blank"
+            class="bg-white text-marina-teal font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Contacta por WhatsApp
+          </a>
+          <p class="text-sm mt-4 opacity-90">
+            Respuestas rápidas • Atención personalizada • Horario: Lunes a
+            Viernes
+          </p>
+        </div>
+
+        <!-- Botón para volver -->
+        <div class="text-center mt-12">
+          <a
+            href="index.html"
+            class="px-6 py-3 bg-marina-light text-marina-teal font-bold rounded-full hover:bg-marina-teal hover:text-white transition-all inline-flex items-center gap-2"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-marina-light py-8 text-center mt-8">
+      <div class="flex justify-center gap-4 mb-4 text-marina-pink text-xl">
+        <i class="fa-solid fa-water"></i>
+        <i class="fa-solid fa-shell"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="text-marina-dark font-semibold">Marina Beauty</p>
+      <p class="text-sm text-gray-500 mt-2">
+        Atención y entregas en persona en Bahía Málaga.
+      </p>
+    </footer>
+  </body>
+</html>
